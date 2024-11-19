@@ -26,10 +26,11 @@ module.exports = {
     ],
   },
   plugins: [
+    // Now you dont need this at host side
     // new ModuleFederationPlugin({
-    //   name: "app1",
+    //   name: "host",
     //   remotes: {
-    //     app2: "app2@[app2Url]/remoteEntry.js",
+    //     app2: "remote@[remote2Url]/remoteEntry.js",
     //   },
     //   shared: {react: {singleton: true}, "react-dom": {singleton: true}},
     // }),

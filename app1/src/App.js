@@ -9,6 +9,7 @@ const useRemote = (scope, module) => {
     registerRemotes([
       {
         name: scope,
+        // this entry url could be loaded by a manifest/api/whatever
         entry: "http://localhost:3002/remoteEntry.js",
       },
     ]);
@@ -36,7 +37,6 @@ const App = () => {
       >
         <h1>App1</h1>
       </div>
-      <div>Count: {count}</div>
       <Suspense fallback={"loading..."}>
         <RemoteApp />
       </Suspense>
