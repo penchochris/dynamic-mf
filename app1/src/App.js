@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useState, ErrorBoundary } from "react";
+import React, { Suspense, lazy } from "react";
 import {
   loadRemote,
   registerRemotes,
@@ -22,10 +22,7 @@ const useRemote = (scope, module) => {
 };
 
 const App = () => {
-  const [count, setCount] = useState(0);
   const RemoteApp = useRemote("app2", "App");
-
-  const handleCount = () => setCount((count) => count + 1);
 
   return (
     <div>
@@ -40,7 +37,6 @@ const App = () => {
         <h1>App1</h1>
       </div>
       <div>Count: {count}</div>
-      <button onClick={handleCount}>+1</button>
       <Suspense fallback={"loading..."}>
         <RemoteApp />
       </Suspense>
