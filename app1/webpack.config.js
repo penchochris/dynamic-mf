@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const {ModuleFederationPlugin} = require("webpack").container;
-const ExternalTemplateRemotesPlugin = require("external-remotes-plugin");
+const { ModuleFederationPlugin } = require("@module-federation/enhanced");
 const path = require("path");
 
 module.exports = {
@@ -26,18 +25,8 @@ module.exports = {
     ],
   },
   plugins: [
-    // Now you dont need this at host side
-    // new ModuleFederationPlugin({
-    //   name: "host",
-    //   remotes: {
-    //     app2: "remote@[remote2Url]/remoteEntry.js",
-    //   },
-    //   shared: {react: {singleton: true}, "react-dom": {singleton: true}},
-    // }),
-    // new ExternalTemplateRemotesPlugin(),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
   ],
 };
-
